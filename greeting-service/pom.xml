@@ -15,7 +15,10 @@
 	<description>greeting-service</description>
 	<properties>
 		<java.version>17</java.version>
+		<eureka.client.version>4.0.3</eureka.client.version>
 	</properties>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
