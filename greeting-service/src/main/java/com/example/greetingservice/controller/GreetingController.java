@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 import static com.example.greetingservice.util.Constant.GREETING;
 
 @RestController
+@RequestMapping("/greeting")
 public class GreetingController {
 
 //    private static final String template = "Welcome, %s!";
 
-    @RequestMapping("/greeting")
+    @RequestMapping("/greet")
     public Greeting greet(@RequestParam(value = "name",defaultValue = "User") String name) {
         return new Greeting(GREETING.concat(name).concat("!"));
     }
