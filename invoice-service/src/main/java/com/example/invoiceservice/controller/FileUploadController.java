@@ -33,7 +33,8 @@ public class FileUploadController {
                 File uploadedFile = new File(dir.getAbsolutePath() + File.separator + fileName);
                 try (OutputStream outputStream = new FileOutputStream(uploadedFile)) {
                     outputStream.write(bytes);
-                    log.info("File " + uploadedFile.getName() + " was successfully uploaded to directory: " + uploadedFile.getCanonicalPath());
+                    log.info("File " + uploadedFile.getName() + " was successfully uploaded to directory: "
+                            + uploadedFile.getCanonicalPath() + "\nSize: " + (double) uploadedFile.length() / 1024 + " kb");
                 } catch (IOException ex) {
                     log.error("Failed to upload file " + uploadedFile.getName());
                     ex.getCause();
