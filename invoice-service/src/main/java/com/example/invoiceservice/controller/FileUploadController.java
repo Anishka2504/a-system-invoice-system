@@ -31,7 +31,7 @@ public class FileUploadController {
                     dir.mkdir();
                 }
                 File uploadedFile = new File(dir.getAbsolutePath() + File.separator + fileName);
-                try (OutputStream outputStream = new FileOutputStream(uploadedFile)){
+                try (OutputStream outputStream = new FileOutputStream(uploadedFile)) {
                     outputStream.write(bytes);
                     log.info("File " + uploadedFile.getName() + " was successfully uploaded to directory: " + uploadedFile.getCanonicalPath());
                 } catch (IOException ex) {
@@ -39,11 +39,14 @@ public class FileUploadController {
                     ex.getCause();
                 }
 
-        } catch(Exception ex){
+            } catch (Exception ex) {
                 log.error("Failed to upload file " + multipartFile.getName());
+            }
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            log.error("File " + multipartFile.getOriginalFilename() + " is not exists or is empty!");
+            return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
-    }
-        return new ResponseEntity<>(HttpStatus.OK);
 
-}
+    }
 }
