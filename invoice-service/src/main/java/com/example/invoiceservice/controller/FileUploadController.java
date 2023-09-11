@@ -1,5 +1,7 @@
 package com.example.invoiceservice.controller;
 
+import com.example.invoiceservice.service.InvoiceService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,36 +18,18 @@ import java.io.OutputStream;
 import static com.example.invoiceservice.constant.Constants.DIRECTORY_FOR_UPLOADED_FILES;
 import static com.example.invoiceservice.constant.Constants.ROOT_PATH;
 
-@Slf4j
 @RestController
+@AllArgsConstructor
 public class FileUploadController {
+
+    private InvoiceService invoiceService;
 
     @PostMapping("/upload")
     public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile multipartFile) {
-        if (!multipartFile.isEmpty()) {
-            try {
-                String fileName = multipartFile.getOriginalFilename();
-                byte[] bytes = multipartFile.getBytes();
-                File dir = new File(ROOT_PATH + File.separator + DIRECTORY_FOR_UPLOADED_FILES);
-                if (!dir.exists()) {
-                    dir.mkdir();
-                }
-                File uploadedFile = new File(dir.getAbsolutePath() + File.separator + fileName);
-                try (OutputStream outputStream = new FileOutputStream(uploadedFile)) {
-                    outputStream.write(bytes);
-                    log.info("File " + uploadedFile.getName() + " was successfully uploaded to directory: "
-                            + uploadedFile.getCanonicalPath() + "\nSize: " + (double) uploadedFile.length() / 1024 + " kb");
-                } catch (IOException ex) {
-                    log.error("Failed to upload file " + uploadedFile.getName());
-                    ex.getCause();
-                }
-
-            } catch (Exception ex) {
-                log.error("Failed to upload file " + multipartFile.getName());
-            }
+        File uploadedFile = invoiceService.uploadFile(multipartFile);
+        if (uploadedFile.exists()) {
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
-            log.error("File " + multipartFile.getOriginalFilename() + " is not exists or is empty!");
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
 
