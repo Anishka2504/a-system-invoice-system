@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.util.Iterator;
 
-import static com.example.invoiceservice.constant.Constants.*;
+import static com.example.invoiceservice.constant.Constants.FILE_PATH;
 
 @Service
 @Slf4j
@@ -63,8 +63,10 @@ public class InvoiceServiceImpl implements InvoiceService {
                 while (cellIterator.hasNext()) {
                     Cell cell = cellIterator.next();
                     switch (cell.getCellType()) {
+
                         case Cell.CELL_TYPE_STRING -> result.append(cell.getStringCellValue()).append("\t\t");
-                        case Cell.CELL_TYPE_NUMERIC, Cell.CELL_TYPE_FORMULA -> result.append(cell.getNumericCellValue());
+                        case Cell.CELL_TYPE_NUMERIC, Cell.CELL_TYPE_FORMULA ->
+                                result.append(cell.getNumericCellValue());
                     }
                 }
                 result.append("\n");
