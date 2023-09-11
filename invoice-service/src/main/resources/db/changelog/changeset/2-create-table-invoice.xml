@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+<changeSet id="2" author="hanna_drazdouskaya">
+    <createTable tableName="invoice">
+        <column name="id" type="bigint" autoIncrement="true">
+            <constraints unique="true" nullable="true"/>
+        </column>
+        <column name="company_id" type="bigint">
+            <constraints foreignKeyName="company_id" references="company(id)"/>
+        </column>
+        <column name="date_creation" type="date">
+            <constraints nullable="false"/>
+        </column>
+        <column name="amount" type="double precision">
+            <constraints nullable="false"/>
+        </column>
+        <column name="currency" type="character varying">
+            <constraints nullable="false"/>
+        </column>
+        <column name="purpose" type="character varying">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+</changeSet>
+</databaseChangeLog>
