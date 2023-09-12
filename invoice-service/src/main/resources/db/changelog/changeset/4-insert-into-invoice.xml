@@ -7,6 +7,7 @@
 <changeSet id="4" author="hanna_drazdouskaya">
     <insert tableName="invoice">
         <column name="company_id" value="1"/>
+        <column name="name" value="123_2023_09_11_1.xls"/>
         <column name="date_creation" value="2023-09-11"/>
         <column name="amount" value="500.0"/>
         <column name="currency" value="USD"/>

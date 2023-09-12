@@ -8,5 +8,5 @@ public interface InvoiceService {
 
     File uploadFile(MultipartFile file);
 
-    String parseXlsFile(String fileName);
+    String parseXlsFile(File file);
 }

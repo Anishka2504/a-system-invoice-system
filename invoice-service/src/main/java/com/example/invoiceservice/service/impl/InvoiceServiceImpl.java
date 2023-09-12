@@ -23,7 +23,6 @@ public class InvoiceServiceImpl implements InvoiceService {
         if (!file.isEmpty()) {
             try {
                 byte[] bytes = file.getBytes();
-                // TODO: 11.09.2023 change filename to necessary format
                 String fileName = file.getOriginalFilename();
                 File dir = new File(FILE_PATH);
                 if (!dir.exists()) {
@@ -40,20 +39,20 @@ public class InvoiceServiceImpl implements InvoiceService {
                 }
             } catch (IOException ex) {
                 log.error("Failed to upload file!");
-                // TODO: 11.09.2023
             }
 
         } else {
             log.warn("File is not exist or is empty!");
-            return new File("error.xls");
+            return null;
         }
         return null;
     }
 
     @Override
-    public String parseXlsFile(String fileName) {
+    public String parseXlsFile(File file) {
         StringBuilder result = new StringBuilder();
-        try (InputStream inputStream = new FileInputStream(fileName)) {
+        String filePath = file.getAbsolutePath();
+        try (InputStream inputStream = new FileInputStream(filePath)) {
             Workbook workbook = new HSSFWorkbook(inputStream);
             Sheet sheet = workbook.getSheetAt(0);
             Iterator<Row> rowIterator = sheet.rowIterator();

@@ -1,13 +1,12 @@
-package com.example.invoiceservice.model;
+package com.example.invoiceservice.entity;
 
+import com.example.invoiceservice.entity.enums.Currency;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.Cascade;
-import org.springframework.beans.factory.annotation.Value;
-import org.yaml.snakeyaml.events.Event;
 
 import java.time.LocalDate;
 
@@ -27,12 +26,15 @@ public class Invoice {
     @Cascade(value = org.hibernate.annotations.CascadeType.PERSIST)
     private Company companyId;
 
+    private String name;
+
     @Column(name = "date_creation")
     private LocalDate dateCreation;
 
     private Double amount;
 
-    private String currency;
+    @Enumerated(value = EnumType.STRING)
+    private Currency currency;
 
     private String purpose;
 

@@ -13,6 +13,7 @@
         <column name="company_id" type="bigint">
             <constraints foreignKeyName="company_id" references="company(id)"/>
         </column>
+        <column name="name" type="character varying"/>
         <column name="date_creation" type="date">
             <constraints nullable="false"/>
         </column>
