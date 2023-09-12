@@ -16,6 +16,21 @@ public class InvoiceFileNameValidator {
     private final CompanyRepository companyRepository;
 
     public boolean isInvoiceFileNameValid(String fileName) {
+        if (!fileName.contains(".")) {
+            return false;
+        }
+        int count = 0;
+        for (int i = 0; i < fileName.length(); i++) {
+            if (fileName.charAt(i) == '.') {
+                count++;
+            }
+        }
+        if (count != 1) {
+            return false;
+        }
+        if (fileNameToArray(fileName).length != 5) {
+            return false;
+        }
         return isDateValid(fileName) && isCompanyExternalIdValid(fileName) && isInvoiceNumberValid(fileName);
     }
 
@@ -43,21 +58,21 @@ public class InvoiceFileNameValidator {
     }
 
     private int getInvoiceNumber(String invoiceFileName) {
-        return Integer.parseInt(parseFileName(invoiceFileName)[4]);
+        return Integer.parseInt(fileNameToArray(invoiceFileName)[4]);
     }
 
     private LocalDate getInvoiceDate(String invoiceFileName) {
-        int year = Integer.parseInt(parseFileName(invoiceFileName)[1]);
-        int month = Integer.parseInt(parseFileName(invoiceFileName)[2]);
-        int day = Integer.parseInt(parseFileName(invoiceFileName)[3]);
+        int year = Integer.parseInt(fileNameToArray(invoiceFileName)[1]);
+        int month = Integer.parseInt(fileNameToArray(invoiceFileName)[2]);
+        int day = Integer.parseInt(fileNameToArray(invoiceFileName)[3]);
         return LocalDate.of(year, month, day);
     }
 
     private Long getCompanyExternalId(String invoiceFileName) {
-        return Long.parseLong(parseFileName(invoiceFileName)[0]);
+        return Long.parseLong(fileNameToArray(invoiceFileName)[0]);
     }
 
-    private String[] parseFileName(String invoiceFileName) {
+    private String[] fileNameToArray(String invoiceFileName) {
         return invoiceFileName.substring(0, invoiceFileName.lastIndexOf('.')).split("_");
     }
 }

@@ -13,8 +13,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import java.time.LocalDate;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class InvoiceFileNameValidatorTest {
@@ -34,13 +33,8 @@ public class InvoiceFileNameValidatorTest {
     @Test
     public void isInvoiceFileNameValidTest() {
         assertTrue(TEST_INVOICE_FILE_NAME.contains("."));
-        int count = 0;
-        for (int i = 0; i < TEST_INVOICE_FILE_NAME.length(); i++) {
-            if (TEST_INVOICE_FILE_NAME.charAt(i) == '.') {
-                count++;
-            }
-        }
-
+        assertEquals(5, splitFileName().length);
+        assertTrue(!TEST_INVOICE_FILE_NAME.contains("[A-Za-z/*-+,()]"));
     }
 
 
@@ -100,7 +94,7 @@ public class InvoiceFileNameValidatorTest {
     }
 
     @Test
-    public void parseFileNameTest() {
+    public void fileNameToArrayTest() {
         String[] array = splitFileName();
         Assertions.assertEquals(5, array.length);
         String[] testArray = Arrays.array("123525", "2023", "09", "06", "1");
