@@ -15,7 +15,7 @@ public class InvoiceFileNameValidator {
 
     private final CompanyRepository companyRepository;
 
-    public boolean fileNameValidate(String fileName) {
+    public boolean isInvoiceFileNameValid(String fileName) {
         return isDateValid(fileName) && isCompanyExternalIdValid(fileName) && isInvoiceNumberValid(fileName);
     }
 
@@ -54,10 +54,10 @@ public class InvoiceFileNameValidator {
     }
 
     private Long getCompanyExternalId(String invoiceFileName) {
-        return Long.getLong(parseFileName(invoiceFileName)[0]);
+        return Long.parseLong(parseFileName(invoiceFileName)[0]);
     }
 
     private String[] parseFileName(String invoiceFileName) {
-        return invoiceFileName.substring(invoiceFileName.lastIndexOf('.')).split("_");
+        return invoiceFileName.substring(0, invoiceFileName.lastIndexOf('.')).split("_");
     }
 }
