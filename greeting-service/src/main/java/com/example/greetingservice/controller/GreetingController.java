@@ -11,8 +11,6 @@ import static com.example.greetingservice.util.Constant.GREETING;
 @RequestMapping("/greeting")
 public class GreetingController {
 
-//    private static final String template = "Welcome, %s!";
-
     @RequestMapping("/greet")
     public Greeting greet(@RequestParam(value = "name",defaultValue = "User") String name) {
         return new Greeting(GREETING.concat(name).concat("!"));
