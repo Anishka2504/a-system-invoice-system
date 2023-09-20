@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+<changeSet id="4" author="hanna_drazdouskaya">
+    <insert tableName="invoice">
+        <column name="company_id" value="1"/>
+        <column name="name" value="123_2023_09_11_1.xls"/>
+        <column name="date_creation" value="2023-09-11 12:00:00"/>
+        <column name="pay_before" value="2023-10-11 12:00:00"/>
+        <column name="amount" value="500.0"/>
+        <column name="currency" value="USD"/>
+        <column name="purpose" value="charity"/>
+    </insert>
+</changeSet>
+
+</databaseChangeLog>
