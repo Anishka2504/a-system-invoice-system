@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -15,7 +16,8 @@ import java.nio.file.StandardCopyOption;
 import java.util.Map;
 import java.util.Objects;
 
-import static com.example.invoiceservice.constant.Constants.FILE_PATH;
+import static com.example.invoiceservice.constant.Constants.DIRECTORY_FOR_UPLOADED_FILES;
+import static com.example.invoiceservice.constant.Constants.INVOICE_SERVICE_DIR;
 import static com.example.invoiceservice.utils.InvoiceFileUtil.*;
 
 
@@ -23,7 +25,9 @@ import static com.example.invoiceservice.utils.InvoiceFileUtil.*;
 public class FileSaveIntoStorageServiceImpl implements FileSaveIntoStorageService {
     @Override
     public void saveFileIntoStorage(MultipartFile file) throws IOException {
-        Path rootDirectory = Path.of(FILE_PATH).normalize();
+        Path rootDirectory = Path.of(System.getProperty("user.dir") + File.separator
+                + INVOICE_SERVICE_DIR + File.separator
+                + DIRECTORY_FOR_UPLOADED_FILES + File.separator).normalize();
         if (!Files.exists(rootDirectory)) {
             Files.createDirectory(rootDirectory);
         }
