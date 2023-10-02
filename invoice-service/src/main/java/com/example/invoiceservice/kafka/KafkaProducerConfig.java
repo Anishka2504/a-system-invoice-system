@@ -34,19 +34,28 @@ public class KafkaProducerConfig {
         return configs;
     }
 
-    @Bean
-    public ProducerFactory<Long, Set<UploadedFileDto>> producerFactory() {
+    @Bean(name = "fileProducerFactory")
+    public ProducerFactory<Long, Set<UploadedFileDto>> fileProducerFactory() {
         return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 
     @Bean
     public KafkaTemplate<Long, Set<UploadedFileDto>> kafkaUploadedFileBatchTemplate() {
-        KafkaTemplate<Long, Set<UploadedFileDto>> template = new KafkaTemplate<>(producerFactory());
+        KafkaTemplate<Long, Set<UploadedFileDto>> template = new KafkaTemplate<>(fileProducerFactory());
         template.setMessageConverter(new StringJsonMessageConverter());
         return template;
     }
 
+    @Bean
+    public ProducerFactory<Long, Long> idProducerFactory() {
+        return new DefaultKafkaProducerFactory<>(producerConfigs());
+    }
 
-
+    @Bean
+    public KafkaTemplate<Long, Long> kafkaIdTemplate() {
+        KafkaTemplate<Long, Long> template = new KafkaTemplate<>(idProducerFactory());
+        template.setMessageConverter(new StringJsonMessageConverter());
+        return template;
+    }
 
 }

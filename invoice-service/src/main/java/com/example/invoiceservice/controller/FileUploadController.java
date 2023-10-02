@@ -1,7 +1,6 @@
 package com.example.invoiceservice.controller;
 
 import com.example.invoiceservice.service.InvoiceFileService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +23,14 @@ public class FileUploadController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping("/sendMessage")
-    public ResponseEntity<?> sendMessage() throws JsonProcessingException {
+//    @PostMapping("/sendMessage")
+//    public ResponseEntity<?> sendMessage() throws JsonProcessingException {
+//        service.sendMessage();
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
+
+    @PostMapping("/process")
+    public ResponseEntity<?> process() {
         service.sendMessage();
         return new ResponseEntity<>(HttpStatus.OK);
     }
