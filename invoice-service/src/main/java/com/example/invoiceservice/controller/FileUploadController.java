@@ -23,12 +23,6 @@ public class FileUploadController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-//    @PostMapping("/sendMessage")
-//    public ResponseEntity<?> sendMessage() throws JsonProcessingException {
-//        service.sendMessage();
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
-
     @PostMapping("/process")
     public ResponseEntity<?> process() {
         service.sendMessage();

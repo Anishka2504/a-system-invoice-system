@@ -1,6 +1,5 @@
 package com.example.invoiceservice.service.impl;
 
-import com.example.invoiceservice.converter.UploadedFileConverter;
 import com.example.invoiceservice.entity.UploadedFile;
 import com.example.invoiceservice.entity.enums.FileStatus;
 import com.example.invoiceservice.repository.UploadedFileRepository;
@@ -9,7 +8,6 @@ import com.example.invoiceservice.service.InvoiceFileService;
 import com.example.invoiceservice.service.ValidatorService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,8 +32,6 @@ public class InvoiceFileServiceImpl implements InvoiceFileService {
     private final FileSaveIntoStorageService fileSaveIntoStorageService;
     private final UploadedFileRepository uploadedFileRepository;
     private final KafkaTemplate<Long, Long> idKafkaTemplate;
-    @Qualifier("uploadedFileConverter")
-    private final UploadedFileConverter converter;
 
     @Override
     @Transactional

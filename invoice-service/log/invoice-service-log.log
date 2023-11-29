@@ -1,0 +1,677 @@
+2023-11-14T12:15:15.433+03:00  INFO 21057 --- [main] c.e.i.InvoiceServiceApplication          : Starting InvoiceServiceApplication using Java 17.0.8.1 with PID 21057 (/home/user/bin/projects/work/a-system-invoice-system/invoice-service/target/classes started by user in /home/user/bin/projects/work/a-system-invoice-system)
+2023-11-14T12:15:15.435+03:00  INFO 21057 --- [main] c.e.i.InvoiceServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-11-14T12:15:15.805+03:00  INFO 21057 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14T12:15:15.890+03:00  INFO 21057 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 3 JPA repository interfaces.
+2023-11-14T12:15:16.024+03:00  INFO 21057 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=412207e3-9ec6-3a41-a418-18cfd6a178b9
+2023-11-14T12:15:16.227+03:00  INFO 21057 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8651 (http)
+2023-11-14T12:15:16.233+03:00  INFO 21057 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-14T12:15:16.233+03:00  INFO 21057 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-14T12:15:16.286+03:00  INFO 21057 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-14T12:15:16.287+03:00  INFO 21057 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 826 ms
+2023-11-14T12:15:16.352+03:00  INFO 21057 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14T12:15:17.404+03:00 ERROR 21057 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "root"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:281) ~[liquibase-core-4.20.0.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1155) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
+	at com.example.invoiceservice.InvoiceServiceApplication.main(InvoiceServiceApplication.java:12) ~[classes/:na]
+
+2023-11-14T12:15:17.407+03:00  WARN 21057 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "root"
+2023-11-14T12:15:17.408+03:00  INFO 21057 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-11-14T12:15:17.416+03:00  INFO 21057 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-11-14T12:15:17.425+03:00 ERROR 21057 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "root"
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1155) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
+	at com.example.invoiceservice.InvoiceServiceApplication.main(InvoiceServiceApplication.java:12) ~[classes/:na]
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "root"
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:286) ~[liquibase-core-4.20.0.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.11.jar:6.0.11]
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "root"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:281) ~[liquibase-core-4.20.0.jar:na]
+	... 20 common frames omitted
+
+2023-11-14T12:16:38.736+03:00  INFO 21442 --- [main] c.e.i.InvoiceServiceApplication          : Starting InvoiceServiceApplication using Java 17.0.8.1 with PID 21442 (/home/user/bin/projects/work/a-system-invoice-system/invoice-service/target/classes started by user in /home/user/bin/projects/work/a-system-invoice-system)
+2023-11-14T12:16:38.739+03:00  INFO 21442 --- [main] c.e.i.InvoiceServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-11-14T12:16:39.355+03:00  INFO 21442 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-14T12:16:39.456+03:00  INFO 21442 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 3 JPA repository interfaces.
+2023-11-14T12:16:39.627+03:00  INFO 21442 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=412207e3-9ec6-3a41-a418-18cfd6a178b9
+2023-11-14T12:16:39.876+03:00  INFO 21442 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8651 (http)
+2023-11-14T12:16:39.882+03:00  INFO 21442 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-14T12:16:39.883+03:00  INFO 21442 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-14T12:16:39.941+03:00  INFO 21442 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-14T12:16:39.942+03:00  INFO 21442 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1148 ms
+2023-11-14T12:16:40.012+03:00  INFO 21442 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-14T12:16:40.091+03:00  INFO 21442 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2b43f314
+2023-11-14T12:16:40.092+03:00  INFO 21442 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-14T12:16:40.214+03:00  INFO 21442 --- [main] liquibase.database                       : Set default schema name to public
+2023-11-14T12:16:40.317+03:00  INFO 21442 --- [main] liquibase.changelog                      : Reading resource: db/changelog/changeset/1-create-table-company.xml
+2023-11-14T12:16:40.405+03:00  INFO 21442 --- [main] liquibase.changelog                      : Reading resource: db/changelog/changeset/2-create-table-invoice.xml
+2023-11-14T12:16:40.421+03:00  INFO 21442 --- [main] liquibase.changelog                      : Reading resource: db/changelog/changeset/3-insert-into-company.xml
+2023-11-14T12:16:40.428+03:00  INFO 21442 --- [main] liquibase.changelog                      : Reading resource: db/changelog/changeset/4-insert-into-invoice.xml
+2023-11-14T12:16:40.436+03:00  INFO 21442 --- [main] liquibase.changelog                      : Reading resource: db/changelog/changeset/5-create-table-uploaded_file.xml
+2023-11-14T12:16:40.506+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.510+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.512+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.515+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.517+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.518+03:00  INFO 21442 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-11-14T12:16:40.529+03:00  INFO 21442 --- [main] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2023-11-14T12:16:40.535+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.538+03:00  INFO 21442 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-11-14T12:16:40.540+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.541+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.583+03:00  INFO 21442 --- [main] liquibase.changelog                      : Table company created
+2023-11-14T12:16:40.585+03:00  INFO 21442 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changeset/1-create-table-company.xml::1::hanna_drazdouskaya ran successfully in 12ms
+2023-11-14T12:16:40.587+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.588+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.599+03:00  INFO 21442 --- [main] liquibase.changelog                      : Table invoice created
+2023-11-14T12:16:40.601+03:00  INFO 21442 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changeset/2-create-table-invoice.xml::2::hanna_drazdouskaya ran successfully in 12ms
+2023-11-14T12:16:40.602+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.606+03:00  INFO 21442 --- [main] liquibase.changelog                      : New row inserted into company
+2023-11-14T12:16:40.608+03:00  INFO 21442 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changeset/3-insert-into-company.xml::3::hanna_drazdouskaya ran successfully in 3ms
+2023-11-14T12:16:40.609+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.613+03:00  INFO 21442 --- [main] liquibase.changelog                      : New row inserted into invoice
+2023-11-14T12:16:40.614+03:00  INFO 21442 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changeset/4-insert-into-invoice.xml::4::hanna_drazdouskaya ran successfully in 3ms
+2023-11-14T12:16:40.615+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.626+03:00  INFO 21442 --- [main] liquibase.changelog                      : Table uploaded_file created
+2023-11-14T12:16:40.628+03:00  INFO 21442 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changeset/5-create-table-uploaded_file.xml::5::hanna_drazdouskaya ran successfully in 11ms
+2023-11-14T12:16:40.630+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.632+03:00  INFO 21442 --- [main] liquibase                                : Update command completed successfully.
+2023-11-14T12:16:40.634+03:00  INFO 21442 --- [main] liquibase.executor                       : Changelog query completed.
+2023-11-14T12:16:40.635+03:00  INFO 21442 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-11-14T12:16:40.688+03:00  INFO 21442 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-14T12:16:40.714+03:00  INFO 21442 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-14T12:16:40.715+03:00  INFO 21442 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-14T12:16:40.794+03:00  INFO 21442 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-14T12:16:40.876+03:00  INFO 21442 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-14T12:16:41.004+03:00  INFO 21442 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-14T12:16:41.355+03:00  INFO 21442 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-14T12:16:41.359+03:00  INFO 21442 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T12:16:41.590+03:00  WARN 21442 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-14T12:16:41.917+03:00  INFO 21442 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-11-14T12:16:42.008+03:00  WARN 21442 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-11-14T12:16:42.038+03:00  INFO 21442 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-11-14T12:16:42.055+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-11-14T12:16:42.057+03:00  INFO 21442 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-14T12:16:42.069+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-11-14T12:16:42.069+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-11-14T12:16:42.069+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-11-14T12:16:42.069+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-11-14T12:16:42.069+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-11-14T12:16:42.069+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-11-14T12:16:42.069+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-11-14T12:16:42.279+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-11-14T12:16:42.281+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-11-14T12:16:42.283+03:00  INFO 21442 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-11-14T12:16:42.286+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1699953402285 with initial instances count: 1
+2023-11-14T12:16:42.288+03:00  INFO 21442 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application INVOICE-SERVICE with eureka with status UP
+2023-11-14T12:16:42.288+03:00  INFO 21442 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1699953402288, current=UP, previous=STARTING]
+2023-11-14T12:16:42.289+03:00  INFO 21442 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INVOICE-SERVICE/172.30.8.54:invoice-service:8651: registering service...
+2023-11-14T12:16:42.299+03:00  INFO 21442 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8651 (http) with context path ''
+2023-11-14T12:16:42.300+03:00  INFO 21442 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8651
+2023-11-14T12:16:42.315+03:00  INFO 21442 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INVOICE-SERVICE/172.30.8.54:invoice-service:8651 - registration status: 204
+2023-11-14T12:16:42.352+03:00  INFO 21442 --- [main] c.e.i.InvoiceServiceApplication          : Started InvoiceServiceApplication in 4.301 seconds (process running for 4.717)
+2023-11-14T12:21:42.070+03:00  INFO 21442 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-14T12:23:03.022+03:00  INFO 21442 --- [http-nio-8651-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-14T12:23:03.023+03:00  INFO 21442 --- [http-nio-8651-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-14T12:23:03.024+03:00  INFO 21442 --- [http-nio-8651-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-11-14T12:23:03.141+03:00  INFO 21442 --- [http-nio-8651-exec-1] c.e.i.s.impl.InvoiceFileServiceImpl      : File 123525_2023_09_06_1.csv is successfully uploaded. Size: 62 b
+2023-11-14T12:23:33.600+03:00  INFO 21442 --- [http-nio-8651-exec-2] c.e.i.s.impl.InvoiceFileServiceImpl      : File 123525_2023_09_06_2.csv is successfully uploaded. Size: 62 b
+2023-11-14T12:26:22.779+03:00  INFO 21442 --- [http-nio-8651-exec-4] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = invoiceProducer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2023-11-14T12:26:22.793+03:00  INFO 21442 --- [http-nio-8651-exec-4] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=invoiceProducer-1] Instantiated an idempotent producer.
+2023-11-14T12:26:22.815+03:00  INFO 21442 --- [http-nio-8651-exec-4] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2023-11-14T12:26:22.816+03:00  INFO 21442 --- [http-nio-8651-exec-4] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2023-11-14T12:26:22.816+03:00  INFO 21442 --- [http-nio-8651-exec-4] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1699953982814
+2023-11-14T12:26:23.031+03:00  WARN 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Error while fetching metadata with correlation id 1 : {to.process=LEADER_NOT_AVAILABLE}
+2023-11-14T12:26:23.032+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=invoiceProducer-1] Cluster ID: 5FNLpVN9R2KX4aABHBlWAQ
+2023-11-14T12:26:23.076+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=invoiceProducer-1] ProducerId set to 0 with epoch 0
+2023-11-14T12:26:23.136+03:00  WARN 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Error while fetching metadata with correlation id 4 : {to.process=LEADER_NOT_AVAILABLE}
+2023-11-14T12:26:23.241+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=invoiceProducer-1] Resetting the last seen epoch of partition to.process-0 to 0 since the associated topicId changed from null to ifVWBi_DTF2H1TX2AT7hGQ
+2023-11-14T12:26:23.252+03:00  INFO 21442 --- [http-nio-8651-exec-4] c.e.i.s.impl.InvoiceFileServiceImpl      : => sending ids: 1
+2023-11-14T12:26:23.255+03:00  INFO 21442 --- [http-nio-8651-exec-4] c.e.i.s.impl.InvoiceFileServiceImpl      : => sending ids: 2
+2023-11-14T12:26:42.071+03:00  INFO 21442 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-14T12:31:42.072+03:00  INFO 21442 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-14T12:34:02.698+03:00 ERROR 21442 --- [http-nio-8651-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: No files with status NEW] with root cause
+
+java.lang.RuntimeException: No files with status NEW
+	at com.example.invoiceservice.service.impl.InvoiceFileServiceImpl.sendMessage(InvoiceFileServiceImpl.java:75) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343) ~[spring-aop-6.0.11.jar:6.0.11]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704) ~[spring-aop-6.0.11.jar:6.0.11]
+	at com.example.invoiceservice.service.impl.InvoiceFileServiceImpl$$SpringCGLIB$$0.sendMessage(<generated>) ~[classes/:na]
+	at com.example.invoiceservice.controller.FileUploadController.process(FileUploadController.java:28) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.12.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.12.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.12.jar:10.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.11.jar:6.0.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.12.jar:10.1.12]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-11-14T12:34:18.855+03:00  INFO 21442 --- [http-nio-8651-exec-7] c.e.i.s.impl.InvoiceFileServiceImpl      : File 123525_2023_09_06_2.csv is successfully uploaded. Size: 62 b
+2023-11-14T12:34:32.017+03:00  INFO 21442 --- [http-nio-8651-exec-8] c.e.i.s.impl.InvoiceFileServiceImpl      : => sending ids: 4
+2023-11-14T12:35:32.075+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node -1 disconnected.
+2023-11-14T12:36:02.517+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:36:02.619+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:36:02.620+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 12 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:36:02.720+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:36:02.720+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 13 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:36:02.972+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:36:02.973+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 14 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:36:04.455+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:36:04.455+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 15 due to node 1 being disconnected (elapsed time since creation: 1030ms, elapsed time since send: 1030ms, request timeout: 30000ms)
+2023-11-14T12:36:05.311+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:36:05.311+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 16 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:36:06.517+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:36:06.517+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 17 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:36:07.724+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:36:07.725+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 18 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:36:08.679+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:36:08.680+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 19 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:36:42.073+03:00  INFO 21442 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-14T12:40:10.460+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:40:10.512+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:40:10.512+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 22 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:40:10.664+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:40:10.664+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 23 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:40:10.866+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:40:10.866+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 24 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:40:11.269+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:40:11.269+03:00  WARN 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Connection to node 1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+2023-11-14T12:40:12.024+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:40:12.024+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 25 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:40:12.979+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:40:12.979+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 26 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:40:14.135+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:40:14.136+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 27 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:40:15.088+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:40:15.089+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 28 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:40:16.142+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:40:16.142+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 29 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:40:17.042+03:00  WARN 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Error while fetching metadata with correlation id 31 : {to.process=LEADER_NOT_AVAILABLE}
+2023-11-14T12:41:10.324+03:00  INFO 21442 --- [http-nio-8651-exec-10] c.e.i.s.impl.InvoiceFileServiceImpl      : File 123525_2023_09_06_2.csv is successfully uploaded. Size: 62 b
+2023-11-14T12:41:24.614+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=invoiceProducer-1] Resetting the last seen epoch of partition to.process-0 to 0 since the associated topicId changed from null to ifVWBi_DTF2H1TX2AT7hGQ
+2023-11-14T12:41:24.614+03:00  INFO 21442 --- [http-nio-8651-exec-1] c.e.i.s.impl.InvoiceFileServiceImpl      : => sending ids: 5
+2023-11-14T12:41:42.073+03:00  INFO 21442 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-14T12:45:05.263+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:45:05.365+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:45:05.365+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 34 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:45:05.466+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:45:05.466+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 35 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:45:05.667+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:45:05.667+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 36 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:45:07.175+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:45:07.175+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 37 due to node 1 being disconnected (elapsed time since creation: 1006ms, elapsed time since send: 1006ms, request timeout: 30000ms)
+2023-11-14T12:45:08.029+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:45:08.029+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 38 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:45:08.882+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:45:08.882+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 39 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:45:10.086+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:45:10.087+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 40 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:45:10.989+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:45:10.989+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 41 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:45:12.009+03:00  WARN 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Error while fetching metadata with correlation id 43 : {to.process=LEADER_NOT_AVAILABLE}
+2023-11-14T12:45:12.114+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=invoiceProducer-1] Resetting the last seen epoch of partition to.process-0 to 0 since the associated topicId changed from null to ifVWBi_DTF2H1TX2AT7hGQ
+2023-11-14T12:46:07.528+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:46:07.580+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:46:07.580+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 45 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:46:07.731+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:46:07.732+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 46 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:46:07.932+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:46:07.932+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 47 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:46:08.334+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:46:08.334+03:00  WARN 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Connection to node 1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+2023-11-14T12:46:09.138+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:46:09.138+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 48 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:46:10.042+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:46:10.042+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 49 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:46:11.197+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:46:11.197+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 50 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:46:12.102+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:46:12.103+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 51 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:46:13.156+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:46:13.156+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 52 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:46:14.237+03:00  WARN 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Error while fetching metadata with correlation id 54 : {to.process=LEADER_NOT_AVAILABLE}
+2023-11-14T12:46:14.341+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=invoiceProducer-1] Resetting the last seen epoch of partition to.process-0 to 0 since the associated topicId changed from null to ifVWBi_DTF2H1TX2AT7hGQ
+2023-11-14T12:46:42.074+03:00  INFO 21442 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-11-14T12:47:00.760+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:47:00.811+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:47:00.811+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 56 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:47:00.912+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:47:00.912+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 57 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:47:01.113+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:47:01.113+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 58 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:47:01.515+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:47:01.515+03:00  WARN 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Connection to node 1 (localhost/127.0.0.1:29092) could not be established. Broker may not be available.
+2023-11-14T12:47:02.469+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:47:02.469+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 59 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:47:03.523+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:47:03.523+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 60 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:47:04.526+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:47:04.527+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 61 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:47:05.479+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:47:05.479+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 62 due to node 1 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2023-11-14T12:47:06.333+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Node 1 disconnected.
+2023-11-14T12:47:06.333+03:00  INFO 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Cancelled in-flight API_VERSIONS request with correlation id 63 due to node 1 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2023-11-14T12:47:07.362+03:00  WARN 21442 --- [kafka-producer-network-thread | invoiceProducer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=invoiceProducer-1] Error while fetching metadata with correlation id 65 : {to.process=LEADER_NOT_AVAILABLE}
+2023-11-14T12:48:20.153+03:00  INFO 21442 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application INVOICE-SERVICE with eureka with status DOWN
+2023-11-14T12:48:20.153+03:00  INFO 21442 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1699955300153, current=DOWN, previous=UP]
+2023-11-14T12:48:20.153+03:00  INFO 21442 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INVOICE-SERVICE/172.30.8.54:invoice-service:8651: registering service...
+2023-11-14T12:48:20.159+03:00  INFO 21442 --- [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=invoiceProducer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2023-11-14T12:48:20.163+03:00  INFO 21442 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INVOICE-SERVICE/172.30.8.54:invoice-service:8651 - registration status: 204
+2023-11-14T12:48:20.163+03:00  INFO 21442 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-11-14T12:48:20.163+03:00  INFO 21442 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-11-14T12:48:20.163+03:00  INFO 21442 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-11-14T12:48:20.163+03:00  INFO 21442 --- [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for invoiceProducer-1 unregistered
+2023-11-14T12:48:20.167+03:00  INFO 21442 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-14T12:48:20.168+03:00  INFO 21442 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-14T12:48:20.169+03:00  INFO 21442 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-14T12:48:20.170+03:00  INFO 21442 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-11-14T12:48:23.171+03:00  INFO 21442 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2023-11-14T12:48:23.177+03:00  INFO 21442 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/INVOICE-SERVICE/172.30.8.54:invoice-service:8651": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: В соединении отказано stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/INVOICE-SERVICE/172.30.8.54:invoice-service:8651": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: В соединении отказано
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:888)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:868)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:764)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:646)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:191)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:184)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1189)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1182)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1107)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1076)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:173)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1027)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:139)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:108)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: В соединении отказано
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:85)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:84)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:113)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:181)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:93)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:101)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:87)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:862)
+	... 39 more
+
+2023-11-14T12:48:23.178+03:00  WARN 21442 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/INVOICE-SERVICE/172.30.8.54:invoice-service:8651": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: В соединении отказано
+2023-11-14T12:48:23.181+03:00  INFO 21442 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/INVOICE-SERVICE/172.30.8.54:invoice-service:8651": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: В соединении отказано stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/INVOICE-SERVICE/172.30.8.54:invoice-service:8651": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: В соединении отказано
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:888)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:868)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:764)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:646)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:191)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:184)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1189)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1182)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1107)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1076)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:173)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1027)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:139)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:108)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: В соединении отказано
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:85)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:84)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:113)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:181)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:93)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:101)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:87)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:71)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:862)
+	... 40 more
+
+2023-11-14T12:48:23.181+03:00  WARN 21442 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/INVOICE-SERVICE/172.30.8.54:invoice-service:8651": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: В соединении отказано
+2023-11-14T12:48:23.182+03:00 ERROR 21442 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INVOICE-SERVICE/172.30.8.54:invoice-service:8651 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.1.jar:2.0.1]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.1.jar:2.0.1]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.1.jar:2.0.1]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.1.jar:2.0.1]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.1.jar:2.0.1]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916) ~[eureka-client-2.0.1.jar:2.0.1]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892) ~[eureka-client-2.0.1.jar:2.0.1]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:191) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:184) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389) ~[spring-cloud-context-4.0.4.jar:4.0.4]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) ~[spring-cloud-context-4.0.4.jar:4.0.4]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1189) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1182) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1107) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1076) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:173) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1027) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:139) ~[spring-boot-3.1.3.jar:3.1.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:108) ~[spring-boot-3.1.3.jar:3.1.3]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-11-14T12:48:23.185+03:00  INFO 21442 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

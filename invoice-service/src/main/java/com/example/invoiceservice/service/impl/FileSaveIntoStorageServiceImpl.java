@@ -1,28 +1,23 @@
 package com.example.invoiceservice.service.impl;
 
-import com.example.invoiceservice.service.FileSaveIntoStorageService;
-import com.example.invoiceservice.utils.InvoiceFileUtil;
-import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
+import com.example.invoiceservice.service.*;
+import com.example.invoiceservice.utils.*;
+import org.springframework.stereotype.*;
+import org.springframework.web.multipart.*;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.Map;
-import java.util.Objects;
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
 
-import static com.example.invoiceservice.constant.Constants.DIRECTORY_FOR_UPLOADED_FILES;
-import static com.example.invoiceservice.constant.Constants.INVOICE_SERVICE_DIR;
 import static com.example.invoiceservice.utils.InvoiceFileUtil.*;
 
 
 @Service
 public class FileSaveIntoStorageServiceImpl implements FileSaveIntoStorageService {
+
+    public static final String INVOICE_SERVICE_DIR = "invoice-service";
+    public static final String DIRECTORY_FOR_UPLOADED_FILES = "loaded";
+
     @Override
     public void saveFileIntoStorage(MultipartFile file) throws IOException {
         Path rootDirectory = Path.of(System.getProperty("user.dir") + File.separator

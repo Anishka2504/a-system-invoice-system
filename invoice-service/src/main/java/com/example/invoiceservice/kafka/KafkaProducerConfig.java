@@ -52,7 +52,7 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public KafkaTemplate<Long, Long> kafkaIdTemplate() {
+    public KafkaTemplate<Long, Long> idKafkaTemplate() {
         KafkaTemplate<Long, Long> template = new KafkaTemplate<>(idProducerFactory());
         template.setMessageConverter(new StringJsonMessageConverter());
         return template;
